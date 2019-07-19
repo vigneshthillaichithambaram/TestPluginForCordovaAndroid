@@ -1,2 +1,17 @@
-<?xml version='1.0' encoding='utf-8'?>
-<plugin id="com.test.plugin.android" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"><name>TestPluginForCordovaAndroid</name><js-module name="TestPluginForCordovaAndroid" src="www/TestPluginForCordovaAndroid.js"><clobbers target="cordova.plugins.TestPluginForCordovaAndroid" /></js-module><platform name="android"><config-file parent="/*" target="res/xml/config.xml"><feature name="TestPluginForCordovaAndroid"><param name="android-package" value="com.test.plugin.android.TestPluginForCordovaAndroid" /></feature></config-file><config-file parent="/*" target="AndroidManifest.xml"></config-file><source-file src="src/android/TestPluginForCordovaAndroid.java" target-dir="src/com/test/plugin/android/TestPluginForCordovaAndroid" /></platform></plugin>
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.test.plugin.android" version="1.0.0">
+   <name>TestPluginForCordovaAndroid</name>
+   <js-module name="TestPluginForCordovaAndroid" src="www/TestPluginForCordovaAndroid.js">
+      <clobbers target="cordova.plugins.TestPluginForCordovaAndroid" />
+   </js-module>
+   <platform name="android">
+      <config-file parent="/*" target="res/xml/config.xml">
+         <feature name="TestPluginForCordovaAndroid">
+            <param name="android-package" value="com.test.plugin.android.TestPluginForCordovaAndroid" />
+         </feature>
+      </config-file>
+      <config-file parent="/*" target="AndroidManifest.xml" />
+      <source-file src="src/android/TestPluginForCordovaAndroid.java" target-dir="src/com/test/plugin/android/TestPluginForCordovaAndroid" />
+      <framework custom="true" src="src/android/testPlugn.gradle" type="gradleReference" />
+   </platform>
+</plugin>
