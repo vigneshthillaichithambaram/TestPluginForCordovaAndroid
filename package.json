@@ -1,0 +1,25 @@
+{
+  "name": "com.test.plugin.android",
+  "version": "1.0.0",
+  "description": "",
+  "cordova": {
+    "id": "com.test.plugin.android",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vigneshthillaichithambaram/TestPluginForCordovaAndroid.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "vigneshthillaichithambaram@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vigneshthillaichithambaram/TestPluginForCordovaAndroid/issues"
+  },
+  "homepage": "https://github.com/vigneshthillaichithambaram/TestPluginForCordovaAndroid#readme"
+}
