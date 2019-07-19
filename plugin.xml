@@ -12,6 +12,6 @@
       </config-file>
       <config-file parent="/*" target="AndroidManifest.xml" />
       <source-file src="src/android/TestPluginForCordovaAndroid.java" target-dir="src/com/test/plugin/android/TestPluginForCordovaAndroid" />
-      <framework custom="true" src="src/android/testPlugn.gradle" type="gradleReference" />
+      <framework custom="true" src="src/android/testPlugin.gradle" type="gradleReference" />
    </platform>
 </plugin>
