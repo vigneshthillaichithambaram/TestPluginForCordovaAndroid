@@ -26,28 +26,31 @@ public class TestPluginForCordovaAndroid extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("coolMethod")) {
-            String message = args.getString(0);
-            this.coolMethod(message, callbackContext);
-            return true;
-        }
-        else if (action.equals("initialize")) {
+        if (action.equals("initialize")) {
             this.initialize(args, callbackContext);
             return true;
         }
-        else if (action.equals("startDeskHelpCenter")) {
-            this.startDeskHelpCenter(callbackContext);
+        else if (action.equals("startDeskHomeScreen")) {
+            this.startDeskHomeScreen(callbackContext);
             return true;
         }
-        return false;
-    }
-
-    private void coolMethod(String message, CallbackContext callbackContext) {
-        if (message != null && message.length() > 0) {
-            callbackContext.success(message);
-        } else {
-            callbackContext.error("Expected one non-empty string argument.");
+        else if(action.equals("startNewTicket")) {
+            this.startNewTicket(callbackContext);
+            return true;
         }
+        else if(action.equals("startHelpCenter")) {
+            this.startHelpCenter(callbackContext);
+        }
+        else if(action.equals("startCommunity")) {
+            this.startCommunity(callbackContext);
+        }
+        else if(action.equals("startTickets")) {
+            this.startTickets(callbackContext);
+        }
+        else if(action.equals("startLiveChat")) {
+            this.startLiveChat(callbackContext);
+        }
+        return false;
     }
 
     private void initialize(JSONArray array, CallbackContext callbackContext) {
@@ -68,7 +71,46 @@ public class TestPluginForCordovaAndroid extends CordovaPlugin {
         }
     }
 
-    private void startDeskHelpCenter(CallbackContext callbackContext) {
-        deskPortalSDK.startDeskHomeScreen(activity);
+    private boolean initializeCheck(CallbackContext callbackContext) {
+        if(activity == null) {
+            callbackContext.error("Plugin is not initialised.");
+        }
+        return activity != null;
+    }
+
+    private void startDeskHomeScreen(CallbackContext callbackContext) {
+        if(initializeCheck(callbackContext)) {
+            deskPortalSDK.startDeskHomeScreen(activity);
+        }
+    }
+
+    private void startNewTicket(CallbackContext callbackContext) {
+        if(initializeCheck(callbackContext)) {
+            deskPortalSDK.startDeskHomeScreen(activity);
+        }
+    }
+
+    private void startHelpCenter(CallbackContext callbackContext) {
+        if(initializeCheck(callbackContext)) {
+            deskPortalSDK.startHelpCenter(activity);
+        }
+    }
+
+    private void startCommunity(CallbackContext callbackContext) {
+        if(initializeCheck(callbackContext)) {
+            deskPortalSDK.startCommunity(activity);
+        }
+    }
+
+    private void startTickets(CallbackContext callbackContext) {
+        if(initializeCheck(callbackContext)) {
+            deskPortalSDK.startTickets(activity);
+        }
+    }
+
+    private void startLiveChat(CallbackContext callbackContext) {
+        if(initializeCheck(callbackContext)) {
+            deskPortalSDK.startLiveChat();
+        }
     }
 }
