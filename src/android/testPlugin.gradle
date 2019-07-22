@@ -5,5 +5,5 @@ repositories {
     }
 
 dependencies {
-    implementation "com.zoho.desk:asapsdk:1.0.3"
+    implementation "com.zoho.desk:asapsdk:1.1.1"
 }
