@@ -28,15 +28,12 @@ public class TestPluginForCordovaAndroid extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("initialize")) {
             this.initialize(args, callbackContext);
-            return true;
         }
         else if (action.equals("startDeskHomeScreen")) {
             this.startDeskHomeScreen(callbackContext);
-            return true;
         }
         else if(action.equals("startNewTicket")) {
             this.startNewTicket(callbackContext);
-            return true;
         }
         else if(action.equals("startHelpCenter")) {
             this.startHelpCenter(callbackContext);
