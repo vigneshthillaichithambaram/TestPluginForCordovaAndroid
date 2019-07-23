@@ -8,6 +8,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.zoho.deskportalsdk.DeskConfig;
 import com.zoho.deskportalsdk.ZohoDeskPortalSDK;
+import com.zoho.deskportalsdk.android.network.DeskCallback;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -28,24 +29,35 @@ public class TestPluginForCordovaAndroid extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("initialize")) {
             this.initialize(args, callbackContext);
+            return true;
         }
-        else if (action.equals("startDeskHomeScreen")) {
+        if (action.equals("startDeskHomeScreen")) {
             this.startDeskHomeScreen(callbackContext);
+            return true;
         }
-        else if(action.equals("startNewTicket")) {
+        if(action.equals("startNewTicket")) {
             this.startNewTicket(callbackContext);
+            return true;
         }
-        else if(action.equals("startHelpCenter")) {
+        if(action.equals("startHelpCenter")) {
             this.startHelpCenter(callbackContext);
+            return true;
         }
-        else if(action.equals("startCommunity")) {
+        if(action.equals("startCommunity")) {
             this.startCommunity(callbackContext);
+            return true;
         }
-        else if(action.equals("startTickets")) {
+        if(action.equals("startTickets")) {
             this.startTickets(callbackContext);
+            return true;
         }
-        else if(action.equals("startLiveChat")) {
+        if(action.equals("startLiveChat")) {
             this.startLiveChat(callbackContext);
+            return true;
+        }
+        if(action.equals("setUserToken")) {
+            this.setUserToken(args.getString(0), callbackContext);
+            return true;
         }
         return false;
     }
@@ -108,6 +120,22 @@ public class TestPluginForCordovaAndroid extends CordovaPlugin {
     private void startLiveChat(CallbackContext callbackContext) {
         if(initializeCheck(callbackContext)) {
             deskPortalSDK.startLiveChat();
+        }
+    }
+
+    private void setUserToken(String userToken, CallbackContext callbackContext) {
+        if(initializeCheck(callbackContext)) {
+            deskPortalSDK.setUserToken(userToken, new DeskCallback.DeskSetUserCallback() {
+                @Override
+                public void onUserSetSuccess() {
+                    callbackContext.success();
+                }
+
+                @Override
+                public void onException(DeskException e) {
+                    callbackContext.error(e.getMessage());
+                }
+            });
         }
     }
 }

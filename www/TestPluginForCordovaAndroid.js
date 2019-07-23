@@ -28,3 +28,7 @@ exports.startTickets = function (arg0, success, error) {
 exports.startLiveChat = function (arg0, success, error) {
     exec(success, error, 'TestPluginForCordovaAndroid', 'startLiveChat', [arg0]);
 };
+
+exports.setUserToken = function (arg0, success, error) {
+    exec(success, error, 'TestPluginForCordovaAndroid', 'setUserToken', [arg0]);
+};
