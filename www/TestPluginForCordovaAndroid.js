@@ -32,3 +32,7 @@ exports.startLiveChat = function (arg0, success, error) {
 exports.setUserToken = function (arg0, success, error) {
     exec(success, error, 'TestPluginForCordovaAndroid', 'setUserToken', [arg0]);
 };
+
+exports.removeUser = function (arg0, success, error) {
+    exec(success, error, 'TestPluginForCordovaAndroid', 'removeUser', [arg0]);
+};

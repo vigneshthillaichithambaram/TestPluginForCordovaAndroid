@@ -59,6 +59,10 @@ public class TestPluginForCordovaAndroid extends CordovaPlugin {
             this.setUserToken(args.getString(0), callbackContext);
             return true;
         }
+        if(action.equals("removeUser")) {
+            this.removeUser(callbackContext);
+            return true;
+        }
         return false;
     }
 
@@ -135,6 +139,22 @@ public class TestPluginForCordovaAndroid extends CordovaPlugin {
                 public void onException(DeskException e) {
                     callbackContext.error(e.getMessage());
                 }
+            });
+        }
+    }
+
+    private void removeUser(CallbackContext callbackContext) {
+        if(initializeCheck(callbackContext)) {
+            deskPortalSDK.removeUser(new DeskCallback.DeskRemoveUserCallback() {
+              @Override
+              public void onUserRemoveSuccess() {
+                callbackContext.success();
+              }
+
+              @Override
+              public void onException(DeskException e) {
+                callbackContext.error(e.getMessage());
+              }
             });
         }
     }
