@@ -1,9 +1,9 @@
 {
-  "name": "com.test.plugin.android",
-  "version": "1.0.5",
+  "name": "com.test.plugin.cordova.android",
+  "version": "1.0.0",
   "description": "",
   "cordova": {
-    "id": "com.test.plugin.android",
+    "id": "com.test.plugin.cordova.android",
     "platforms": [
       "android"
     ]
