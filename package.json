@@ -1,5 +1,5 @@
 {
-  "name": "TestPluginForCordovaAndroid",
+  "name": "com.test.plugin.android",
   "version": "1.0.5",
   "description": "",
   "cordova": {
