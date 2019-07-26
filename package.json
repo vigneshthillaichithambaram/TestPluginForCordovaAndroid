@@ -1,6 +1,6 @@
 {
-  "name": "com.test.plugin.android",
-  "version": "1.0.3",
+  "name": "TestPluginForCordovaAndroid",
+  "version": "1.0.5",
   "description": "",
   "cordova": {
     "id": "com.test.plugin.android",
@@ -14,7 +14,8 @@
   },
   "keywords": [
     "ecosystem:cordova",
-    "cordova-android"
+    "cordova-android",
+    "TestPluginForCordovaAndroid"
   ],
   "author": "vigneshthillaichithambaram@gmail.com",
   "license": "ISC",
