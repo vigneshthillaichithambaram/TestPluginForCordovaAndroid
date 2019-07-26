@@ -143,7 +143,7 @@ public class TestPluginForCordovaAndroid extends CordovaPlugin {
         }
     }
 
-    /*private void removeUser(CallbackContext callbackContext) {
+    private void removeUser(CallbackContext callbackContext) {
         if(initializeCheck(callbackContext)) {
             deskPortalSDK.removeUser(new DeskCallback.DeskRemoveUserCallback() {
               @Override
@@ -157,5 +157,5 @@ public class TestPluginForCordovaAndroid extends CordovaPlugin {
               }
             });
         }
-    }*/
+    }
 }
